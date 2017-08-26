@@ -5,6 +5,7 @@ provider "aws" {
 
 resource "aws_instance" "web-server0" {
     count = "${var.AWS_COUNT_WEB}"
+    availability_zone = "${element(var.AVZ[var.AWS_REGION], count.index)}"
     ami = "${lookup(var.AWS_AMI,var.AWS_REGION)}"
     key_name = "${var.AWS_KEY_NAME}"
     instance_type = "${var.AWS_INSTANCE_TYPE}"

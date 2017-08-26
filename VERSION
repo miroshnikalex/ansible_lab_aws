@@ -3,3 +3,6 @@
 
 2.0.0
 - Scripted 3 EC2 for WEB services
+
+3.0.0
+- Mapped AZ to Regions and used them in the main script 
