@@ -1,2 +1,5 @@
 1.0.0
 - Initial commit
+
+2.0.0
+- Scripted 3 EC2 for WEB services
