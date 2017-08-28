@@ -29,3 +29,6 @@ variable "AWS_INSTANCE_TYPE" {
   default = "t2.micro"
 }
 variable "AWS_PROFILE_NAME" {}
+variable "AWS_COUNT_ACS" {
+  default = "1"
+}

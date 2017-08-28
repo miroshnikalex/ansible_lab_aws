@@ -3,7 +3,7 @@ provider "aws" {
   profile = "${var.AWS_PROFILE_NAME}"
 }
 
-resource "aws_instance" "web-server0" {
+resource "aws_instance" "web-server" {
     count = "${var.AWS_COUNT_WEB}"
     availability_zone = "${element(var.AVZ[var.AWS_REGION], count.index)}"
     ami = "${lookup(var.AWS_AMI,var.AWS_REGION)}"
@@ -23,8 +23,7 @@ resource "aws_instance" "web-server0" {
     inline = [
       "sudo rpm -Uhv https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm",
       "sudo yum clean all",
-      "sudo yum install vim mc -y",
-      "sudo yum update -y"
+      "sudo yum install vim mc -y"
              ]
   connection {
     type = "ssh"
