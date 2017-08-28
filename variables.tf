@@ -1,6 +1,9 @@
 variable "AWS_REGION" {
   default = "eu-central-1"
 }
+variable "AWS_VPC_CIDR_BLOCK" {
+  default = "10.1.0.0/16"
+}
 variable "AWS_AMI" {
   type = "map"
   default = {
